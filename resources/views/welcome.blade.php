@@ -16,7 +16,7 @@
             --light-gold: #f7dc6f;
             --dark-gold: #b8860b;
             --luxury-gradient: linear-gradient(135deg, #2d5016 0%, #4a7c59 50%, #d4af37 100%);
-            --hero-overlay: linear-gradient(rgba(45, 80, 22, 0.8), rgba(212, 175, 55, 0.3));
+            --hero-overlay: linear-gradient(rgba(45, 80, 22, 0.7), rgba(74, 124, 89, 0.6), rgba(212, 175, 55, 0.4));
         }
 
         body {
@@ -29,7 +29,8 @@
         .hero-section {
             height: 100vh;
             background: var(--hero-overlay),
-                       url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') center/cover;
+            url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')
+            center/cover;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -49,17 +50,25 @@
             font-size: 4.5rem;
             font-weight: 900;
             margin-bottom: 1.5rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-            background: linear-gradient(135deg, #ffffff 0%, #f7dc6f 50%, #d4af37 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: shimmer 3s ease-in-out infinite;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.7);
+            color: white;
+            animation: fadeInUp 1s ease-out;
         }
 
-        @keyframes shimmer {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.8; }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
         }
 
         .hero-subtitle {
@@ -335,38 +344,6 @@
         </div>
     </section>
 
-    <!-- Stats Section -->
-    <section class="stats-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3 col-6">
-                    <div class="stat-item">
-                        <span class="stat-number">1000+</span>
-                        <div class="stat-label">Posts Created</div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-6">
-                    <div class="stat-item">
-                        <span class="stat-number">500+</span>
-                        <div class="stat-label">Active Writers</div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-6">
-                    <div class="stat-item">
-                        <span class="stat-number">99.9%</span>
-                        <div class="stat-label">Uptime</div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-6">
-                    <div class="stat-item">
-                        <span class="stat-number">24/7</span>
-                        <div class="stat-label">Support</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Footer -->
     <footer class="luxury-footer">
         <div class="container">
@@ -375,16 +352,12 @@
                     <span class="material-icons me-2" style="font-size: 2rem; vertical-align: middle;">auto_stories</span>
                     Laravel Posts
                 </div>
-                <p class="mb-3">
-                    <span class="material-icons me-2" style="vertical-align: middle;">favorite</span>
-                    Crafted with <span class="footer-heart">♥</span> by <strong>Asail Alshukaili</strong>
-                </p>
-                <p class="mb-0">
+                <div>
+                    <small style="opacity: 0.7;">
+                    <p class="mb-0">
                     <span class="material-icons me-2" style="vertical-align: middle;">play_circle</span>
                     Special thanks to <strong>Codezilla YouTube Channel</strong> for the incredible tutorials!
-                </p>
-                <div class="mt-4">
-                    <small style="opacity: 0.7;">© 2024 Laravel Posts. Powered by Laravel & Bootstrap.</small>
+                </p></small>
                 </div>
             </div>
         </div>
